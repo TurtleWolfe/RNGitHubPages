@@ -22,6 +22,11 @@ npm run deploy
 ```bash
 expo install expo-image-picker
 expo install expo-sharing
+#
+npx expo-optimize
+expo publish
 ```
 
 [Sharing the image](https://docs.expo.io/tutorial/sharing/ 'Similar to expo-image-picker, the functionality that we need to share is available in an Expo library — this one is called expo-sharing.')
+
+[Publish and share your app](https://docs.expo.io/introduction/walkthrough/#publish-and-share-your-app 'To share the app with teammates we can run expo publish and we’ll build the JavaScript bundle and upload all of the assets to a CDN.')
