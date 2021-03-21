@@ -17,6 +17,11 @@ git push --set-upstream origin master
 npm run deploy
 ```
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+[Picking an image](https://docs.expo.io/tutorial/image-picker/ 'For this, we can use an Expo library called expo-image-picker:')
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+```bash
+expo install expo-image-picker
+expo install expo-sharing
+```
+
+[Sharing the image](https://docs.expo.io/tutorial/sharing/ 'Similar to expo-image-picker, the functionality that we need to share is available in an Expo library — this one is called expo-sharing.')

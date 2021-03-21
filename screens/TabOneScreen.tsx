@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Image, TouchableOpacity, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-
+import * as Sharing from 'expo-sharing';
 // import logo from './assets/logo.png'; 
 import { LogoParamList } from '../types';
 import logo from '../assets/images/logo.png';
@@ -32,6 +32,15 @@ export default function TabOneScreen() {
 
   };
 
+  let openShareDialogAsync = async () => {
+    if (!(await Sharing.isAvailableAsync())) {
+      alert(`Uh oh, sharing isn't available on your platform`);
+      return;
+    }
+
+    await Sharing.shareAsync(selectedImage.localUri);
+  };
+
   if (selectedImage !== null) {
     return (
       <View style={styles.container}>
@@ -39,6 +48,9 @@ export default function TabOneScreen() {
           source={{ uri: selectedImage.localUri }}
           style={styles.thumbnail}
         />
+        <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
+          <Text style={styles.buttonText}>Share this photo</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={openImagePickerAsync}
           style={styles.button}>
@@ -86,6 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: "blue",
     padding: 20,
     borderRadius: 5,
+    marginBottom: 10,
   },
   buttonText: {
     fontSize: 20,
