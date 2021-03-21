@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Image, TouchableOpacity, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+
 // import logo from './assets/logo.png'; 
 import { LogoParamList } from '../types';
 import logo from '../assets/images/logo.png';
@@ -8,6 +10,44 @@ import logo from '../assets/images/logo.png';
 import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen() {
+
+  const [selectedImage, setSelectedImage] = React.useState(null);
+
+  let openImagePickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("Permission to access camera roll is required!");
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    // console.log(pickerResult);
+
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+
+    setSelectedImage({ localUri: pickerResult.uri });
+
+  };
+
+  if (selectedImage !== null) {
+    return (
+      <View style={styles.container}>
+        <Image
+          source={{ uri: selectedImage.localUri }}
+          style={styles.thumbnail}
+        />
+        <TouchableOpacity
+          onPress={openImagePickerAsync}
+          style={styles.button}>
+          <Text style={styles.buttonText}>Pick a photo</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <Image source={logo} style={styles.logo} />
@@ -15,7 +55,7 @@ export default function TabOneScreen() {
         To share a photo from your phone with a friend, just press the button below!
       </Text>
       <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
+        onPress={openImagePickerAsync}
         style={styles.button}>
         <Text style={styles.buttonText}>Pick a photo</Text>
       </TouchableOpacity>
@@ -50,6 +90,13 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: '#fff',
+  },
+  thumbnail: {
+    width: 300,
+    height: 300,
+    resizeMode: "contain",
+    // Try switching it from contain to 'stretch' or 'cover' to see other behaviors.
+    marginBottom: 10,
   },
   title: {
     fontSize: 20,
