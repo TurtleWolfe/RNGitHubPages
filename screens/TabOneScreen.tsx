@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, Platform, TouchableOpacity, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing';
+// import uploadToAnonymousFilesAsync from 'anonymous-files';
 // import logo from './assets/logo.png'; 
 import { LogoParamList } from '../types';
 import logo from '../assets/images/logo.png';
@@ -17,6 +18,7 @@ export default function TabOneScreen() {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (permissionResult.granted === false) {
+      // alert(`The image is available for sharing at: ${selectedImage.remoteUri}`);
       alert("Permission to access camera roll is required!");
       return;
     }
@@ -30,6 +32,14 @@ export default function TabOneScreen() {
 
     setSelectedImage({ localUri: pickerResult.uri });
 
+    // 
+    // if (Platform.OS === 'web') {
+    //   let remoteUri = await uploadToAnonymousFilesAsync(pickerResult.uri);
+    //   setSelectedImage({ localUri: pickerResult.uri, remoteUri });
+    // } else {
+    //   setSelectedImage({ localUri: pickerResult.uri, remoteUri: null });
+    // } 
+    // 
   };
 
   let openShareDialogAsync = async () => {

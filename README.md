@@ -22,7 +22,7 @@ npm run deploy
 ```bash
 expo install expo-image-picker
 expo install expo-sharing
-#
+# expo install anonymous-files
 npx expo-optimize
 expo publish
 ```
