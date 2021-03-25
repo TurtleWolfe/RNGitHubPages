@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/RNGitHubPages/static/js/app.50c5550a.chunk.js",
-    "app.js.map": "/RNGitHubPages/static/js/app.50c5550a.chunk.js.map",
+    "app.js": "/RNGitHubPages/static/js/app.da4b1a90.chunk.js",
+    "app.js.map": "/RNGitHubPages/static/js/app.da4b1a90.chunk.js.map",
     "runtime~app.js": "/RNGitHubPages/static/js/runtime~app.b6b91fd2.js",
     "runtime~app.js.map": "/RNGitHubPages/static/js/runtime~app.b6b91fd2.js.map",
-    "static/js/2.15447665.chunk.js": "/RNGitHubPages/static/js/2.15447665.chunk.js",
-    "static/js/2.15447665.chunk.js.map": "/RNGitHubPages/static/js/2.15447665.chunk.js.map",
+    "static/js/2.3841ecd7.chunk.js": "/RNGitHubPages/static/js/2.3841ecd7.chunk.js",
+    "static/js/2.3841ecd7.chunk.js.map": "/RNGitHubPages/static/js/2.3841ecd7.chunk.js.map",
     "fonts/AntDesign.ttf": "/RNGitHubPages/./fonts/AntDesign.ttf",
     "fonts/Entypo.ttf": "/RNGitHubPages/./fonts/Entypo.ttf",
     "fonts/Feather.ttf": "/RNGitHubPages/./fonts/Feather.ttf",
@@ -25,12 +25,12 @@
     "index.html": "/RNGitHubPages/index.html",
     "manifest.json": "/RNGitHubPages/manifest.json",
     "serve.json": "/RNGitHubPages/serve.json",
-    "static/js/2.15447665.chunk.js.LICENSE.txt": "/RNGitHubPages/static/js/2.15447665.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/RNGitHubPages/static/media/logo.cbca0826.png"
+    "static/js/2.3841ecd7.chunk.js.LICENSE.txt": "/RNGitHubPages/static/js/2.3841ecd7.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/RNGitHubPages/static/media/logo.3f5e6ef1.png"
   },
   "entrypoints": [
     "static/js/runtime~app.b6b91fd2.js",
-    "static/js/2.15447665.chunk.js",
-    "static/js/app.50c5550a.chunk.js"
+    "static/js/2.3841ecd7.chunk.js",
+    "static/js/app.da4b1a90.chunk.js"
   ]
 }
